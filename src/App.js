@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 
 import TestProps from './component/TestProps'
@@ -23,10 +24,9 @@ const App = () => {
     },
     any: [2,2,2],
     element: (()=> {
-      return (<strong>I'm element</strong>)
+      return (`<strong>Im element</strong>`)
     })(),
     Enum : 'hello',
-    union : [1,2,3,4,5]   // wrong case
   }
 
   return (
@@ -43,11 +43,34 @@ const App = () => {
           any={data.any}
           element={data.element}
           Enum={data.Enum}
-          union={data.union}
+          union={data.array}
+          arrayOf={data.array}
+          notArrayOf={data.array}
+          objectOf={data.object}
+          notObjectOf={data.object}
+          required={1}
         />
       </div>
       <div className="flow">
-         <TestFlow />
+        <TestFlow
+          array={data.array}
+          isTrue={data.isTrue}
+          isFalse={data.isFalse}
+          func={data.func}
+          number={data.num}
+          object={data.object}
+          string={data.string}
+          any={data.any}
+          element={data.element}
+          Enum={data.Enum}
+          union={data.array}
+          arrayOf={data.array}
+          notArrayOf={data.array}
+          objectOf={data.object}
+          notObjectOf={data.object}
+          required={1}
+        />
+
       </div>
     </div>
   )

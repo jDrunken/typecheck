@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TestProps = ({string, number, isFalse, isTrue, func, array, object, any, element, Enum, union}) => {
+const TestProps = ({string, number, isFalse, isTrue, func, array, object, any, element, Enum, union, arrayOf, notArrayOf, objectOf, notObjectOf, required, defaultProps}) => {
   return (
     <table>
       <thead>
@@ -71,6 +71,35 @@ const TestProps = ({string, number, isFalse, isTrue, func, array, object, any, e
         <tr>
           <th>oneOfType</th>
           <td>{union}</td>
+          <td>bool/숫자/문자 아니라서 에러</td>
+        </tr>
+        <tr>
+          <th>arrayOf</th>
+          <td>{arrayOf}</td>
+        </tr>
+        <tr>
+          <th>notArrayOf</th>
+          <td>{notArrayOf}</td>
+        </tr>
+        <tr>
+          <th>objectOf</th>
+          <td>{objectOf.a}</td>
+        </tr>
+        <tr>
+          <th>notObjectOf</th>
+          <td>{notObjectOf.a}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>required</th>
+          <td>{required}</td>
+          <td>반드시 문자열이어야 하나 없어서 에러</td>
+        </tr>
+        <tr>
+          <th>defaultProps</th>
+          <td>{defaultProps}</td>
+          <td>null로 주어져도 빈 값이기 때문에<br />
+          defaultProps이 적용되지 않음</td>
         </tr>
       </tbody>
     </table>
@@ -93,7 +122,17 @@ TestProps.propTypes = {
     PropTypes.bool,
     PropTypes.string,
     PropTypes.number
-  ])
+  ]),
+  arrayOf: PropTypes.arrayOf(PropTypes.number),
+  notArrayOf: PropTypes.arrayOf(PropTypes.string),
+  objectOf: PropTypes.objectOf(PropTypes.number),
+  notObjectOf: PropTypes.objectOf(PropTypes.string),
+
+  required: PropTypes.string.isRequired,
+}
+
+TestProps.defaultProps = {
+  defaultProps: 'hello world'
 }
 
 export default TestProps

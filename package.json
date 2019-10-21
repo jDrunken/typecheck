@@ -11,7 +11,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "build:flow": "babel src/ -d lib/",
+    "prepublish": "yarn run build:flow"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +30,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "flow-bin": "^0.109.0"
   }
 }
