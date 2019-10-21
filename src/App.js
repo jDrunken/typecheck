@@ -1,26 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import TestProps from './component/TestProps'
+import TestFlow from './component/TestFlow'
+
 import './App.css';
 
-function App() {
+
+const App = () => {
+
+  const data = {
+    string : 'hello',
+    num: 123,
+    isTrue : true,
+    isFalse : false,
+    func : () => {
+      console.log('it\'s function')
+    },
+    array: [1,2,3,4,5],
+    object: {
+      a:'a',
+      b:'b'
+    },
+    any: [2,2,2],
+    element: (()=> {
+      return (<strong>I'm element</strong>)
+    })(),
+    Enum : 'hello',
+    union : [1,2,3,4,5]   // wrong case
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="prop">
+        <TestProps
+          array={data.array}
+          isTrue={data.isTrue}
+          isFalse={data.isFalse}
+          func={data.func}
+          number={data.num}
+          object={data.object}
+          string={data.string}
+          any={data.any}
+          element={data.element}
+          Enum={data.Enum}
+          union={data.union}
+        />
+      </div>
+      <div className="flow">
+         <TestFlow />
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
