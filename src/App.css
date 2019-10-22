@@ -1,3 +1,6 @@
+* {
+  font-size:14px;
+}
 .App {
   text-align: center;
 }
@@ -28,7 +31,7 @@
 
 .wrapper .prop,
 .wrapper .flow {
-  padding:1em;
+  padding:0.5em;
   float:left;
   border:1px solid #aaa;
 }

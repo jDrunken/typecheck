@@ -1,11 +1,10 @@
 //@flow
-import React from 'react';
+import React, {useState } from 'react';
 
 import TestProps from './component/TestProps'
 import TestFlow from './component/TestFlow'
 
 import './App.css';
-
 
 const App = () => {
 
@@ -24,10 +23,17 @@ const App = () => {
     },
     any: [2,2,2],
     element: (()=> {
-      return (`<strong>Im element</strong>`)
+      return (<strong>Im element</strong>)
     })(),
     Enum : 'hello',
   }
+
+  const [dynamic, setDynamic] = useState(1)
+
+  function setType ($event) {
+    return typeof dynamic === 'number' ? setDynamic('str') : setDynamic(1)
+  }
+
 
   return (
     <div className="wrapper">
@@ -35,7 +41,6 @@ const App = () => {
         <TestProps
           array={data.array}
           isTrue={data.isTrue}
-          isFalse={data.isFalse}
           func={data.func}
           number={data.num}
           object={data.object}
@@ -48,14 +53,15 @@ const App = () => {
           notArrayOf={data.array}
           objectOf={data.object}
           notObjectOf={data.object}
-          required={1}
+          required={data.string}
+          dynamic={dynamic}
+          setType={setType}
         />
       </div>
       <div className="flow">
         <TestFlow
           array={data.array}
           isTrue={data.isTrue}
-          isFalse={data.isFalse}
           func={data.func}
           number={data.num}
           object={data.object}
@@ -68,9 +74,10 @@ const App = () => {
           notArrayOf={data.array}
           objectOf={data.object}
           notObjectOf={data.object}
-          required={1}
+          required={data.string}
+          dynamic={dynamic}
+          setType={setType}
         />
-
       </div>
     </div>
   )

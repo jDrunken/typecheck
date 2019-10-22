@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^5.5.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"
@@ -14,7 +15,8 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "build:flow": "babel src/ -d lib/",
-    "prepublish": "yarn run build:flow"
+    "prepublish": "yarn run build:flow",
+    "flow:watch": "flow-watch"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,8 +37,14 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-flow": "^7.0.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
     "eslint-plugin-flowtype": "^4.3.0",
-    "flow-bin": "^0.109.0"
+    "flow-babel-webpack-plugin": "^1.1.1",
+    "flow-bin": "^0.109.0",
+    "flow-watch": "^1.1.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   }
 }
