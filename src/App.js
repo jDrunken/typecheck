@@ -1,5 +1,5 @@
 //@flow
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 
 import TestProps from './component/TestProps'
 import TestFlow from './component/TestFlow'
@@ -52,8 +52,6 @@ const App = () => {
           arrayOf={data.array}
           notArrayOf={data.array}
           objectOf={data.object}
-          notObjectOf={data.object}
-          required={data.string}
           dynamic={dynamic}
           setType={setType}
         />
@@ -73,8 +71,6 @@ const App = () => {
           arrayOf={data.array}
           notArrayOf={data.array}
           objectOf={data.object}
-          notObjectOf={data.object}
-          required={data.string}
           dynamic={dynamic}
           setType={setType}
         />

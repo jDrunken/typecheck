@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TestProps = ({string, number, isTrue, func, array, object, any, element, Enum, union, arrayOf, notArrayOf, objectOf, notObjectOf, required, defaultProps, dynamic, setType}) => {
+const TestProps = ({string, number, isTrue, func, array, object, any, element, Enum, union, arrayOf, notArrayOf, objectOf, required, defaultProps, dynamic, setType}) => {
   return (
     <table>
       <thead>
@@ -87,7 +87,6 @@ const TestProps = ({string, number, isTrue, func, array, object, any, element, E
 TestProps.propTypes = {
   array : PropTypes.array,
   isTrue : PropTypes.bool,
-  isFalse : PropTypes.bool,
   func : PropTypes.func,
   number: PropTypes.number,
   object: PropTypes.object,

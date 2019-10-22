@@ -4,7 +4,6 @@ import React from 'react';
 type Props = {
   array : Array<number>,
   isTrue : boolean,
-  isFalse : boolean,
   // func : PropTypes.func,
   number: number,
   object: {
@@ -22,9 +21,9 @@ type Props = {
     a: string,
     b: string
   },
-  required?: string,
+  required: ?string,
   defaultProps:string,
-  dynamic : string | boolean,
+  dynamic : string | number,
   setType:any,
 }
 
